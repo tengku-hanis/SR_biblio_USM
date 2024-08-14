@@ -31,9 +31,11 @@ country_collab <- biblioNetwork(MT, analysis = "collaboration",  network = "coun
 
 # Plot
 set.seed(123)
-networkPlot(country_collab, n = 30, cluster = "none", #try "optimal"
-            Title = "Countries collaboration", type = "circle",
-            size.cex = T)
+country_net <- networkPlot(country_collab, n = 30, cluster = "none", #try "optimal"
+                           Title = "Countries collaboration", type = "circle",
+                           size.cex = T)
+country_net$nodeDegree
+country_net$cluster_res #if we have clusters
 
 ## 2) Co-citation ----
 # For foundation/basic theme

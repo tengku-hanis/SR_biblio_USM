@@ -1,4 +1,4 @@
-# Other measures
+# Other measures in bibliometric analysis
 # Tengku Muhd Hanis Mokhtar (https://tengkuhanis.netlify.app/)
 # Jom Research (https://jomresearch.netlify.app/)
 # Aug15, 2024
@@ -31,7 +31,6 @@ Map$documentToClusters %>%
   select(TI, DI)
 
 ## 2) Thematic evolution ----
-#- not working!
 
 years <- c(2003, 2013) #cut off points
 theme_evo <- thematicEvolution(dat2, field = "ID", years = years, n = 100, minFreq = 2)
@@ -49,7 +48,7 @@ trend_kw$df #data used in plot
 result <- biblioAnalysis(dat2)
 dom <- dominance(result, k=10)
 dom
-?dominance #detail how dominance factor calculated
+?dominance #details on how dominance factor calculated
 
 ## 5) Top-author productivity over time ----
 
@@ -61,5 +60,4 @@ head(topAU$dfAU) #author's productivity per year
 head(topAU$dfPapersAU) #author's document list
 
 ## 6) Three fields plot ----
-#- not working!
 threeFieldsPlot(dat2, fields = c("AU", "DE", "SO"), n = c(20, 20, 20))
